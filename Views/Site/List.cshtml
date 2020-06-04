@@ -1,0 +1,11 @@
+﻿<h1>All cars</h1>
+<h3>@Model.CurrCategory</h3>
+@{
+    foreach (var site in Model.AllSites)
+    {
+        <div>
+            <h2>Site : @site.Name</h2>
+            <a href="@site.UrlMainPage">Visit site</a>
+        </div>
+    }
+}

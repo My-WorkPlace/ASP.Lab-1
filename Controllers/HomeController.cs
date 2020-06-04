@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using ASP.Lab_1.Data;
 using ASP.Lab_1.Data.Interfaces;
 using ASP.Lab_1.Data.Models;
 using ASP.Lab_1.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace ASP.Lab_1.Controllers
 {
@@ -67,13 +67,20 @@ namespace ASP.Lab_1.Controllers
             ViewBag.Title = "Page with cars";
             return View(obj);
         }
+        
+        public IActionResult Create()
+        {
+            ViewBag.Categories = new SelectList(_sitesCategory.AllCategories, "Id", "Name");
+            return View();
+        }
 
         [HttpPost]
-        public async Task<IActionResult> Create(Site site)
+        public IActionResult Save(Site site)
         {
+            var category = _sitesCategory.AllCategories.FirstOrDefault(c => c.Id == site.CategoryId);
             _content.Sites.Add(site);
-            await _content.SaveChangesAsync();
-            return RedirectToAction("Index");
+            _content.SaveChangesAsync();
+            return Redirect("Index");
         }
     }
 }

@@ -1,6 +1,5 @@
 using ASP.Lab_1.Data;
 using ASP.Lab_1.Data.Interfaces;
-using ASP.Lab_1.Data.Mocks;
 using ASP.Lab_1.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -44,6 +43,7 @@ namespace ASP.Lab_1
             app.UseStatusCodePages();
             app.UseStaticFiles();
             app.UseRouting();
+
             app.UseMvcWithDefaultRoute();//call default controller
             using (var scope = app.ApplicationServices.CreateScope())
             {

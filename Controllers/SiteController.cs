@@ -13,10 +13,14 @@ namespace ASP.Lab_1.Controllers
         private readonly IAllSites _allSites;
         private readonly ISitesCategory _sitesCategory;
 
+  
+        
+
         public SiteController(IAllSites allSites,ISitesCategory sitesCategory)
         {
             _allSites = allSites;
             _sitesCategory = sitesCategory;
+
         }
 
         [Route("Site/List")]

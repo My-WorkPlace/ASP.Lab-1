@@ -61,6 +61,7 @@ namespace ASP.Lab_1.Controllers
             }
 
             var obj = new SiteListViewModel();
+            //TODO if zero sites return smt
             obj.AllSites = sites.ToList();
             obj.CurrCategory = "Sites table";
 

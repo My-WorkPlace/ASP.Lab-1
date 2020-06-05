@@ -1,7 +1,4 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
-using ASP.Lab_1.Data.Interfaces;
-using ASP.Lab_1.Data.Models;
+﻿using ASP.Lab_1.Data.Interfaces;
 using ASP.Lab_1.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 

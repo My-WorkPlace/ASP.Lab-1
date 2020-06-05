@@ -1,9 +1,13 @@
-﻿namespace ASP.Lab_1.Data.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ASP.Lab_1.Data.Models
 {
     public class Site
     {
         public int Id { get; set; }
+        [Required(ErrorMessage = "Please enter url")]
         public string UrlMainPage { get; set; }
+        [Required(ErrorMessage = "Please enter name")]
         public string Name { get; set; }
         //public string Description { get; set; }
         public int CategoryId { get; set; } 
